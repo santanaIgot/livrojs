@@ -17,10 +17,11 @@ frm.addEventListener("submit", (e)=>{
     console.log(feminino);
     console.log(altura);
     
+    // nessa condição verifico se masculino ou feminino esta selecionado 
     if(masculino){
-        var pesoIdeal = (altura * altura) * 22;
+        var pesoIdeal = Math.pow(altura,2) * 22;
     }else if(feminino){
-        var pesoIdeal = (altura * altura) * 21;
+        var pesoIdeal = Math.pow(altura,2) * 21;
     }
 
     resp.innerText = `O peso ideal para ${name} é ${pesoIdeal.toFixed(3)}`
