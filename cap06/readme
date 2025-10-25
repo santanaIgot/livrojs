@@ -1,0 +1,42 @@
+EXPLICAÇÃO VETOR 
+
+
+
+os vetores ou arrays são estruturas que permitem armazenar uma lista de dados na memoria principal do computador.
+Eles são utéis para inserir ou remover intens de uma lista de compras ou de alunos de uma turma, por exemplo.
+Com os vetores é possível recuperar todos os itens inseridos na lista. Um índice numérico (que começa em 0) identifica cada elemento na lista .
+A apresentação ilustrada na tabela contem uma lista de itens de supermecado. 
+
+como se declarar um vetor em javascript 
+
+
+const produtos = []
+const produtos = new Array()
+
+
+podemos declarar um vetor com valor inicial, como por exemplo;
+                    0        1      2
+const produtos = [queijo, pastel, frango]
+
+
+vetores podem ser declarados como const e mesmo assim ter o valor dos seus elementos alterados. O que não pode ser feito com const é uma retribuição de valor a uma variavel.
+
+
+diferença entre o uso de variaveis e vetores.
+
+Uma variável armazena apenas um valor por vez; quando uma nova atribuição a essa variavel é realizada, o seu valor anterior é perdido.
+Assim, apos duas atribuições a seguir, a variavel idade permanece apenas com o ultimo valor que lhe foi atribuido.
+
+let idade 
+idade = 18 
+idade = 15
+
+
+Já os vetores permitem armazenar um conjunto de dados e acessar todos os seus elementos pela referência ao índice que identifica cada um deles.
+Assim, após as duas atribuições a seguir, os dois valores atribuidos ao vetor idade podem ser acessados.
+
+const idade = []
+idade[0] = 18
+idade[1] = 22
+
+
