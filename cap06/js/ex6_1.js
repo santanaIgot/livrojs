@@ -62,10 +62,6 @@ const respNome = document.querySelector("span");
 const respLista = document.querySelector("pre");
 //--------------------------------------------------------------------------------
 
-
-
-
-
 const pacientes = []; // vetor global
 
 frm.addEventListener("submit", (e) => {
@@ -80,7 +76,7 @@ frm.addEventListener("submit", (e) => {
 
   // for tradicional (inicia em 0 , enquanto que menor do tamanho do array)
   for (let i = 0; i < pacientes.length; i++) {
-    lista += `${pacientes[0]}\n`;
+    lista += `${i + 1} ${pacientes[0]}\n`;
 
     console.log(lista);
   }
@@ -90,32 +86,41 @@ frm.addEventListener("submit", (e) => {
   frm.inPaciente.focus();
 });
 
+//Adicina um "ouvinte" para o evento click no btUrgencia que esta no form
+
+frm.btUrgencia.addEventListener("click", () => {
+
+  if (!frm.checkValidity()) {
+    alert("Nome do paciente a ser atendido em carácter de urgencia");
+
+    frm.inPaciente.focus();
+    return;
+  }
+
+  const nome = frm.inPaciente.value;
+  pacientes.unshift(nome);
+
+  let lista = "";
+
+  //foreach aplicado sobre o array de pacientes
+
+  pacientes.forEach((paciente, i) => (lista += `${i + 1},${paciente}\n`));
+
+  respLista.innerText = lista;
+  frm.inPaciente.value = "";
+});
 
 
-
-//Adicina um "ouvinte" para o evento click no btUrgencia que esta no form 
-
-frm.btUrgencia.addEventListener("click", (e) => {
-    e.preventDefault()
-
-    if(!frm.checkValidity()){
-        alert("Nome do paciente a ser atendido em carácter de urgencia")
-
-        frm.inPaciente.focus()
-        return
+frm.btAtender.addEventListener("click", ()=>{
+    // se o tamanho do vetor for = 0
+    if(pacientes.length == 0){
+      alert('Não há pacientes na lista de espera')
+      frm.inPaciente.focus()
     }
 
-
-    const nome = frm.inPaciente.value;
-    pacientes.unshift(nome);
-
+    const atender = pacientes.shift();
+    respNome.innerText = atender;
     let lista = "";
-
-
-    //foreach aplicado sobre o array de pacientes
-
-    pacientes.forEach((paciente, i)=> lista += `${i +1},${paciente}\n`)
-
+    pacientes.forEach((paciente, i) => (lista += `${i + 1}, ${paciente}\n`))
     respLista.innerText = lista;
-    frm.inPaciente.value = "";
 })
