@@ -10,15 +10,17 @@
 
     <form>
         <p>numero:
-            <input type="number" id="inNumber">
-            <button type="submit">Apostar</button>
+            <input type="number" id="inNumber" min="1" max="100" required autofocus>
+
+            <button type="submit" id="btSubmit" value="apostar">Apostar</button>
+            <input type="button" id="btNovo" class="oculta" value="jogar novamente"/>  
         </p>
     </form>
 
-    <h3>Erros:
+    <h3 id="outErros">Erros:
         <span id="outErros"></span>
     </h3>
-    <h3>É um número entre 1 e 100</h3>
+    <h id="outDicas">É um número entre 1 e 100</h3>
     <h3><span id="outChances">6 chances</span></h3>
     <script src="/cap06/js/ex6_2.js"></script>
 </body>
