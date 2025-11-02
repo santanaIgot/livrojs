@@ -9,9 +9,6 @@ const erros = []; // vetor de escopo global de numeros já apostados
 const sorteados = Math.floor(Math.random() * 100) + 1;// num aleatório entre 1 e 100 
 const chances = 6;
 
-console.log('sorteado:', sorteados);
-
-
 
 frm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -49,6 +46,10 @@ frm.addEventListener("submit", (e) => {
 
     frm.inNumber.value = "";
     frm.inNumber.focus();
+})
 
-    
+
+
+frm.btNovo.addEventListener("click", ()=> {
+    location.reload()
 })

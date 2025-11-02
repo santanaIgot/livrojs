@@ -1,0 +1,34 @@
+
+é possivel que um vetor contenha uma lista de objetos, com alguns atributos deste objet . Poderiamos por exemplo, ter o objeto produto
+com alguns atributos deste objeto.
+Definir um vetor de objetos nos permite realizar operações sobre esse vetor, como classificar seus elementos por um dos seus atributos.
+Um vetor de objetos é declarado da mesma forma que um vetor simples .
+Na inserção de itens no vetor, contudo, devem-se indicar os atributos que o compõe. 
+Observe o script a seguir
+
+<script>
+    const carros = []
+    carros.push({modelo:'hyundai', cor:'azul'})
+    carros.push({modelo:'fiat', cor:'vermelho'})
+
+    for(const carro of carros){
+        console.log(carro.modelo);
+        const {cor ,modelo} = carro;
+        console.log(cor);
+        
+    }
+</script>
+
+Um dos acréscimos das novas versões do javascript é a possibilidade de atribuir as variaveis via desestruturação dos elementos de vetores ou objetos.
+Poderíamos começar a demonstração de uso no exemplo da seção anterior.
+Os atributos modelo e preço, do objeto carro, são obtidos apartir de uma única atribuição.
+Como se refere a objetos, os nomes dos atributos devem estar limitados a "{}"
+A desestruturação també pode ocorrer em arrays como abaixo.
+
+<script>
+    const pacientes = ["Ana", "julia", "clara"]
+
+    const [a, b, c] = pacientes;
+    console.log(a,b,c);
+    
+</script>
