@@ -9,7 +9,7 @@ frm.addEventListener("submit", (e) => {
 
     e.preventDefault();
 
-    const price = frm.inPreco.value;
+    const price = Number(frm.inPreco.value) ;
     const product = frm.inProduct.value;
 
     console.log(product);
@@ -22,7 +22,7 @@ frm.addEventListener("submit", (e) => {
 
 
     resp1.innerText = `Promoção de : ${product}`
-    resp2.innerText = `Leve 2 por apenas R$: ${desconto}`
+    resp2.innerText = `Leve 2 por apenas R$: ${desconto.toFixed(2)}`
     
     
 })
