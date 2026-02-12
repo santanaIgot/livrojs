@@ -18,9 +18,5 @@ form.addEventListener("submit", (e) => {
         const total = isValueUse + isValueUse;
         resp1.innerText = `O valor a pagar é ${total}`
     }
-
-
-    
-    
     
 })
