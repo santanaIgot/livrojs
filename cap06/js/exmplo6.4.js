@@ -20,3 +20,13 @@ console.log(localizeIdade20);
 console.log(idades.indexOf(23)); // retorna a posição do array em que a idade esta no caso é => 5
 console.log(idades.lastIndexOf(18));
 
+
+const cidades = ["Pelotas", "São Paulo", "Bahia", "Fortaleza"]
+
+
+for (let i = 0; i < cidades.length; i++) {
+    const element = cidades[i];
+    console.log(element);
+}
+
+console.log(cidades.join(","));
