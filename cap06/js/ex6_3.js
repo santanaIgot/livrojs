@@ -33,8 +33,11 @@ frm.inSearch.addEventListener("submit", (e) => {
     const searchNumber = frm.inSearchNumber.value;
     console.log(searchNumber);
      
-    
-     if(searchNumber == nums){
-        result.innerText = `Numero na posição ${nums[0]}`
-     }
+    let isNum = false;
+    for (let i = 0; i < nums.length; i++) {
+        if(nums[1] == searchNumber){
+            result.innerText = `Numero encontrado na posição ${i}`
+        }
+        
+    }
 })
