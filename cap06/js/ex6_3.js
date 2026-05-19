@@ -38,6 +38,5 @@ frm.inSearch.addEventListener("submit", (e) => {
         if(nums[1] == searchNumber){
             result.innerText = `Numero encontrado na posição ${i}`
         }
-        
     }
 })
